@@ -16,6 +16,7 @@ public class DatabaseConfig {
         dataSource.setUrl("jdbc:mysql://localhost:3306/IngoPass?serverTimezone=UTC");
         dataSource.setPassword("test1234");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        System.out.println("asd");
         return dataSource;
     }
 
