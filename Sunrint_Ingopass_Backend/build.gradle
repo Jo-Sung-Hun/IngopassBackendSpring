@@ -32,8 +32,16 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.python:jython-standalone:2.7.2'
+
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+task runJythonScript(type: JavaExec) {
+	main = "org.python.util.jython"
+	args = ['hello.py']
+	classpath = sourceSets.main.runtimeClasspath
 }

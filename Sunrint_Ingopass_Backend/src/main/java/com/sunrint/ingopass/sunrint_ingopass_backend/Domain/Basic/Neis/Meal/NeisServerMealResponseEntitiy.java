@@ -11,11 +11,11 @@ public class NeisServerMealResponseEntitiy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<NeisServerMealResponseEntitiyRow> mealServiceDietInfo;
+    private List<NeisServerMealResponseEntitiyRowMeal> mealServiceDietInfo;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
-    public NeisServerMealResponseEntitiy(List<NeisServerMealResponseEntitiyRow> mealServiceDietInfo, Date createdAt) {
+    public NeisServerMealResponseEntitiy(List<NeisServerMealResponseEntitiyRowMeal> mealServiceDietInfo, Date createdAt) {
         this.mealServiceDietInfo = mealServiceDietInfo;
         this.createdAt = createdAt;
     }
@@ -23,11 +23,11 @@ public class NeisServerMealResponseEntitiy {
     public NeisServerMealResponseEntitiy() {
     }
 
-    public List<NeisServerMealResponseEntitiyRow> getMealServiceDietInfo() {
+    public List<NeisServerMealResponseEntitiyRowMeal> getMealServiceDietInfo() {
         return mealServiceDietInfo;
     }
 
-    public void setMealServiceDietInfo(List<NeisServerMealResponseEntitiyRow> mealServiceDietInfo) {
+    public void setMealServiceDietInfo(List<NeisServerMealResponseEntitiyRowMeal> mealServiceDietInfo) {
         this.mealServiceDietInfo = mealServiceDietInfo;
     }
 
