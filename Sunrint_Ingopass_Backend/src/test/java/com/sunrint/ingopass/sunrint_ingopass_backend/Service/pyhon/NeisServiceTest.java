@@ -49,6 +49,7 @@ public class NeisServiceTest {
                 "Type=json&pIndex=1&pSize=100&ATPT_OFCDC_SC_CODE=B10&SD_SCHUL_CODE=7010536&" +
                 "MLSV_YMD=" + a;
         System.out.println(NEIS_API_HOST_URL);
+
         String date = "20200101";
         if (date.isEmpty() || date.isBlank() || date.length() != 8){
             if ((date.length() < 8)) {
@@ -93,7 +94,7 @@ public class NeisServiceTest {
     private Integer getThisWeek(){
         LocalDateTime now = LocalDateTime.of(2023, 5, 21, 12, 0, 0);
         int resultDayOfWeek = now.getDayOfWeek().getValue();
-        if (resultDayOfWeek > 1){
+        if (resultDayOfWeek > 1) {
             throw new IllegalArgumentException("date is not valid");
         } else {
             LocalDateTime beforeWeek = now.minusDays(7);
